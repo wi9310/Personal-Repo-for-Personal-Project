@@ -1,0 +1,35 @@
+var intervalWait = 200
+var speedbetweenLetters = 50
+var actualText1 = "Hey"
+var actualText2 = "It's nice to meet you."
+var actualText3 = "My name is William."
+let index = 0
+
+function typeWriter(message = String, letterSpeed = int | speedbetweenLetters) {
+    if (index < message) {
+        mainfile.getElementById('typewriterText').innerHTML += message.charAt(i);
+        index++
+        setTimeout(typeWriter, letterSpeed)
+
+    }
+}
+
+function reverseTypeWriter(letterSpeed) {
+    if (mainfile.getElementById('typewriterText').innerHTML.length > 0) {
+        mainfile.getElementById('typewriterText').innerHTML -= mainfile.getElementById('typewriterText').innerHTML.length - 1
+
+        setTimeout(reverseTypeWriter, letterSpeed)
+    }
+}
+
+function fulltypeWriter(array = {}, wordSpeed = int) {
+
+    for (var i = 0; i < array.length; i++) {
+        typeWriter(array[i])
+        setTimeout(reverseTypeWriter(wordSpeed))
+
+    }
+    
+
+}
+
